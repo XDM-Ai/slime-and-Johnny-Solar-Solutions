@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slime and Johnny Solar Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Times New Roman', serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left:1rem;
+      text-decoration:none;
+      font-weight:700;
+      border:none;
+      padding:0.8rem 2rem;
+      font-weight:600;
+      cursor:pointer;
+      border-radius:5px;
+      font-size: medium;
+}
+
+.hero {
+     background:url(IMG_6676.JPG);
+      background-size: cover;
+      background-repeat: no-repeat;
+      color:#675f5f;text-align:center;padding:7rem 1rem;position:relative;
+}
+
+nav a:hover{color:#ffd700;}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons .btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-buttons .btn:hover{
+ background-color: #595858;
+}
+
+.btn.secondary {
+  background-color: #666;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">⚡ Slime & Johnny</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Powering Your Future, Reliably.</h1>
+    <p>Quality solar installations with a focus on accountability and customer satisfaction.</p>
+    <div class="cta-buttons">
+      <a href="#contact" class="btn">Request Installation</a>
+      <a href="#about" class="btn secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- More sections like About, Services, Testimonials, Contact will go here -->
+
+
+  <section class="About">
+    <h1>About Us</h1>
+    <p>Slime and Johnny Solar Solutions is a solar energy company based in Uyo, Akwa Ibom State. We specialize in delivering high-quality solar installations and consultancy services to homeowners, estates, and NGOs.</p>
+    <p>Our mission is simple: to empower communities with clean, reliable energy while ensuring every customer feels heard, supported, and satisfied.</p>
+    <h2>Our Values</h2>
+    <ul>
+      <li><strong>Accountability:</strong> We stand by our work and our word.</li>
+      <li><strong>Customer Focus:</strong> Your satisfaction is our top priority.</li>
+      <li><strong>Sustainability:</strong> We believe in a greener, brighter future.</li>
+    </ul>
+  </section>
+
+  <section class="Service"
+    <h1>Our Services</h1>
+    <section>
+      <h2>Solar Installations</h2>
+      <p>We design and install solar systems tailored to your energy needs. Whether you’re powering a home, estate, or NGO facility, we ensure a smooth, efficient transition to solar.</p>
+    </section>
+    <section>
+      <h2>Solar Consultancy</h2>
+      <p>Not sure where to start? Our experts will assess your energy usage, recommend the best solutions, and guide you through every step of your solar journey.</p>
+    </section>
+    <a href="contact.html" class="btn">Request Installation</a>
+  </section>
+
+  <section class="Contact">
+    <h1>Contact Us</h1>
+    <p>Have questions or ready to get started? Reach out via the form below or message us directly on WhatsApp.</p>
+
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <p>Or chat with us directly on <a href="https://wa.me/2349031610249" target="_blank">WhatsApp</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Slime and Johnny Solar Solutions. All rights reserved.
+    </p>
+    <p>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </p>
+  </footer>
+  <script>
+    // Smooth scroll for navigation links
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// WhatsApp integration for "Request Installation" button
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', function() {
+    if (this.textContent.includes('Request Installation')) {
+      const phoneNumber = '2349031610249'; // Replace with your WhatsApp number
+      const message = encodeURIComponent('Hello! I’d like to request a solar installation.');
+      window.open(`https://wa.me/${2349031610249}?text=${'Hello! I’d like to request a solar installation.'}`);
+    }
+  });
+});
+
+// Basic form submission handler (for future email integration)
+const form = document.querySelector('form');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you! Your request has been submitted.');
+    form.reset();
+  });
+}
+
+  </script>
+</body>
+</html>
